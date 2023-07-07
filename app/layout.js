@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -11,7 +12,18 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <nav className='bg-gray-800 text-white text-center space-x-6 py-2'>
+          <Link  href="/">Home</Link>
+          <Link  href="/blog">Blog</Link>
+        </nav>
+        {children}
+        <footer className='bg-gray-800 text-sm text-white text-center py-2'>
+        
+            &copy; {`${new Date().getFullYear()}`} | Created with passion by Motivation2Code Team
+          
+          </footer>
+        </body>
     </html>
   )
 }
