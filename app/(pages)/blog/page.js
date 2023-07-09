@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React from 'react'
 // this is function to get data from api end point
 async function getQuotes(){
-  const quotes = await fetch('http://localhost:3000/api/allquotes');
+  const quotes = await fetch('https://dummyjson.com/posts?limit=150');
   // by-default it render on server as cached on server
 
   if(!quotes.ok){
